@@ -1,0 +1,60 @@
+<div class="page-header">
+  <h1>Каналы</h1>
+</div>
+<ul class="list-unstyled list-inline">
+  <li><a href="<%= newChannelsPath() %>" class="btn btn-primary">Создать новый канал</a></li>
+</ul>
+
+<table class="table table-striped">
+  <thead>
+    <th>
+      <form action="<%= current_path %>" method="GET">
+          <input name="sort" type="hidden" value="<%= if (params["sort"]=="num") { %>num desc<% } else { %>num<% } %>">
+          <input name="q" type="hidden" value="<%= params["q"] %>">
+        <button type="submit" class="btn btn-link">
+          <i class="fa  <%= if ((params["sort"]!="num") && (params["sort"]!="num desc")) { %>fa-sort<% } %>
+                        <%= if (params["sort"]=="num") { %>fa-sort-numeric-asc<% } %>
+                        <%= if (params["sort"]=="num desc") { %>fa-sort-numeric-desc<% } %>" aria-hidden="true"> №</i>
+        </button>
+      </form>
+    </th>
+    <th>
+      <form action="<%= current_path %>" method="GET">
+          <input name="sort" type="hidden" value="<%= if (params["sort"]=="name") { %>name desc<% } else { %>name<% } %>">
+          <input name="q" type="hidden" value="<%= params["q"] %>">
+        <button type="submit" class="btn btn-link"><i class="fa <%= if ((params["sort"]!="name") && (params["sort"]!="name desc")) { %>fa-sort<% } %>
+                      <%= if (params["sort"]=="name") { %>fa-sort-alpha-asc<% } %>
+                      <%= if (params["sort"]=="name desc") { %>fa-sort-alpha-desc<% } %>" aria-hidden="true"> Наименование</i></button>
+      </form></th>
+    <th>
+      <form action="<%= current_path %>" method="GET">
+          <input name="sort" type="hidden" value="<%= if (params["sort"]=="url") { %>url desc<% } else { %>url<% } %>">
+          <input name="q" type="hidden" value="<%= params["q"] %>">
+        <button type="submit" class="btn btn-link"><i class="fa <%= if ((params["sort"]!="url") && (params["sort"]!="url desc")) { %>fa-sort<% } %>
+                      <%= if (params["sort"]=="url") { %>fa-sort-alpha-asc<% } %>
+                      <%= if (params["sort"]=="url desc") { %>fa-sort-alpha-desc<% } %>" aria-hidden="true"> Ссылка</i></button>
+      </form></th>
+    </th>
+    <th >&nbsp;</th>
+  </thead>
+  <tbody>
+    <%= for (channel) in channels { %>
+      <tr>
+        <td><%= channel.Num %></td>
+        <td><%= truncate(channel.Name, {"size": 100, "trail": "..."}) %></td>
+        <td><%= truncate(channel.Url, {"size": 100, "trail": "..."}) %></td>
+        <td>
+          <div class="pull-right">
+            <a href="<%= channelPath({ channel_id: channel.ID }) %>" class="btn btn-info">Просмотр</a>
+            <a href="<%= editChannelPath({ channel_id: channel.ID }) %>" class="btn btn-warning">Редактирование</a>
+            <a href="<%= channelPath({ channel_id: channel.ID }) %>" data-method="DELETE" data-confirm="Вы уверены?" class="btn btn-danger">Удаление</a>
+          </div>
+        </td>
+      </tr>
+    <% } %>
+  </tbody>
+</table>
+
+<div class="text-center">
+  <%= paginator(pagination) %>
+</div>

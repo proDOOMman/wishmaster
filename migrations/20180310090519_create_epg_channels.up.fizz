@@ -1,0 +1,7 @@
+create_table("epg_channels", func(t) {
+	t.Column("url_hash", "uint32", {})
+	t.Column("epg_id", "string", {})
+	t.Column("display_name", "string", {})
+	t.Column("search_name", "string", {})
+	t.Column("icon_src", "string", {})
+})

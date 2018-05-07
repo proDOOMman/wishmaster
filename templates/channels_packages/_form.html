@@ -1,0 +1,22 @@
+<%= f.CheckboxTag("Active", {unchecked: false, label: "Активный"}) %>
+<%= f.InputTag("Name", {label: "Наименование"}) %>
+<%= f.TextArea("Description", {rows: 10, label: "Описание"}) %>
+<%= f.InputTag("M3uUrl", {type: "url", label: "Ссылка на плейлист в формате M3U"}) %>
+<p>или</p>
+<%= f.FileTag("M3UFile", {label: "Файл с плейлистом в формате M3U"}) %>
+
+<%= f.InputTag("XmltvUrl", {type: "url", label: "Ссылка на программу передач в формате XMLTV"}) %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Google custom search</div>
+  <div class="panel-body row">
+    <div class="col-md-6">
+      <%= f.InputTag("GoogleKey", {label: "<a href=\"https://console.developers.google.com/apis/credentials\" target=\"_blank\">Key</a>"}) %>
+    </div>
+    <div class="col-md-6">
+      <%= f.InputTag("GoogleCx", {label: "<a href=\"https://cse.google.com/create/new\" target=\"_blank\">Cx</a> (Restrict Pages using Schema.org Types: ImageObject)"}) %>
+    </div>
+  </div>
+</div>
+
+<button class="btn btn-success" role="submit">Сохранить</button>

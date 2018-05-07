@@ -1,0 +1,12 @@
+<%= f.SelectTag("ChannelsPackageID", {options: channelsPackages, label: "Пакет каналов", value: channel.ChannelsPackageID, class: "selectpicker"}) %>
+<%= f.InputTag("Name", {label: "Наименование", class: "typeahead", autocomplete: "off"}) %>
+<%= f.TextArea("Description", {rows: 10, label: "Описание"}) %>
+<%= f.InputTag("Url", {label: "Ссылка на поток"}) %>
+<%= f.InputTag("Num", {type: "number", label: "Номер канала"}) %>
+<%= f.CheckboxTag("Crypted", {unchecked: false, label: "Зашифрованный"}) %>
+<%= f.CheckboxTag("Erotic", {unchecked: false, label: "18+"}) %>
+<%= f.InputTag("StreamAspectRatio", {label: "Соотношение сторон (1 - оригинал)"}) %>
+<%= f.InputTag("ZoomRatio", {label: "Масштабирование (0.5 - без масштабирования)"}) %>
+<%= f.InputTag("EpgID", {label: "Идентификатор канала в EPG"}) %>
+<%= f.InputTag("EpgOffset", {label: "Смещение времени EPG"}) %>
+<button class="btn btn-success" role="submit">Сохранить</button>

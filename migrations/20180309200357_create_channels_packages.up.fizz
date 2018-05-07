@@ -1,0 +1,9 @@
+create_table("channels_packages", func(t) {
+	t.Column("active", "bool", {})
+	t.Column("name", "string", {})
+	t.Column("description", "text", {"null": true})
+	t.Column("m3u_url", "string", {"null": true})
+	t.Column("xmltv_url", "string", {"null": true})
+	t.Column("google_cx", "string", {"null": true})
+	t.Column("google_key", "string", {"null": true})
+})

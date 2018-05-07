@@ -1,0 +1,47 @@
+development:
+  dialect: "sqlite3"
+  database: wishmaster_development.sqlite
+
+epg_development:
+  dialect: "sqlite3"
+  database: wishmaster_epg_development.sqlite
+
+epg_ro_development:
+  dialect: "sqlite3"
+  database: wishmaster_epg_development.sqlite?mode=ro
+
+production:
+  dialect: "sqlite3"
+  database: wishmaster_production.sqlite
+
+epg_production:
+  dialect: "sqlite3"
+  database: wishmaster_epg_production.sqlite
+
+epg_ro_production:
+  dialect: "sqlite3"
+  database: wishmaster_epg_development.sqlite?mode=ro
+
+development_sml482:
+  dialect: "sqlite3"
+  database: /mnt/persistent/wishmaster/wishmaster_development.sqlite
+
+epg_development_sml482:
+  dialect: "sqlite3"
+  database: /mnt/persistent/wishmaster/wishmaster_epg_development.sqlite
+
+epg_ro_development_sml482:
+  dialect: "sqlite3"
+  database: /mnt/persistent/wishmaster/wishmaster_epg_development.sqlite?mode=ro
+
+production_sml482:
+  dialect: "sqlite3"
+  database: /mnt/persistent/wishmaster/wishmaster_production.sqlite
+
+epg_production_sml482:
+  dialect: "sqlite3"
+  database: /mnt/persistent/wishmaster/wishmaster_epg_production.sqlite
+
+epg_ro_production_sml482:
+  dialect: "sqlite3"
+  database: /mnt/persistent/wishmaster/wishmaster_epg_development.sqlite?mode=ro

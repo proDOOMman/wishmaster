@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h1>Управление приставкой</h1>
+</div>
+
+<p>
+  <%= form({action:"/execute", method: "POST"}) { %>
+    <div class="input-group">
+      <%= f.InputTag({name: "command", placeholder: "Команда", class: "form-control"}) %>
+      <span class="input-group-btn">
+        <%= f.SubmitTag("Выполнить", {class: "btn btn-default"}) %>
+      </span>
+    </div>
+    <div class="panel-body">
+      Например:
+      <br/>
+      fw_setenv forced_middleware_url http://127.0.0.1:80
+      <br/>
+      fw_setenv firmware_version 6.0.0
+      <br/>
+      fw_printenv
+      <br/>
+      /mnt/persistent/wishmaster/wishmaster version
+    </div>
+  <% } %>
+</p>
+</br>
+<p>
+  <%= form({action:"/reboot", method: "POST"}) { %>
+    <%= f.SubmitTag("Перезагрузка", {class: "btn btn-danger", data-confirm: "Вы уверены?"}) %>
+  <% } %>
+</p>

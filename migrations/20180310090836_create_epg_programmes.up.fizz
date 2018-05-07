@@ -1,0 +1,10 @@
+create_table("epg_programmes", func(t) {
+	t.Column("url_hash", "uint32", {})
+	t.Column("channel_epg_id", "string", {})
+	t.Column("programme_id", "string", {"null": true})
+	t.Column("start", "integer", {})
+	t.Column("stop", "integer", {})
+	t.Column("title", "string", {})
+	t.Column("desc", "string", {"null": true})
+	t.Column("categories", "string", {"null": true})
+})

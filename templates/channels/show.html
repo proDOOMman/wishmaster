@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h1>Канал (просмотр)</h1>
+</div>
+
+<ul class="list-unstyled list-inline">
+  <li><a href="<%= channelsPath() %>" class="btn btn-info">Вернуться к списку каналов</a></li>
+  <li><a href="<%= editChannelPath({ channel_id: channel.ID })%>" class="btn btn-warning">Редактирование</a></li>
+  <li><a href="<%= channelPath({ channel_id: channel.ID })%>" data-method="DELETE" data-confirm="Вы уверены?" class="btn btn-danger">Удаление</a>
+</ul>
+
+<p>
+    <strong>Пакет каналов</strong>: <%= channel.ChannelsPackage.Name %>
+</p>
+<p>
+  <strong>Наименование</strong>: <%= channel.Name %>
+</p>
+<p>
+  <strong>Описание</strong>: <%= channel.Description %>
+</p>
+<p>
+  <strong>Ссылка на поток</strong>: <%= channel.Url %>
+</p>
+<p>
+  <strong>Номер канала</strong>: <%= channel.Num %>
+</p>
+<p>
+  <strong>Зашифрованный</strong>: <%= if (channel.Crypted) { %>✔<% } else { %> ✕ <% } %>
+</p>
+<p>
+  <strong>18+</strong>: <%= if (channel.Erotic) { %>✔<% } else { %> ✕ <% } %>
+</p>
+<p>
+  <strong>Соотношение сторон</strong>: <%= channel.StreamAspectRatio %>
+</p>
+<p>
+  <strong>Масштабирование</strong>: <%= channel.ZoomRatio %>
+</p>
+<p>
+  <strong>Идентификатор канала в программе передач</strong>: <%= channel.EpgID %>
+</p>

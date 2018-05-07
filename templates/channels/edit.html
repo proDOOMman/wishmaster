@@ -1,0 +1,8 @@
+<div class="page-header">
+  <h1>Редактирование канала</h1>
+</div>
+
+<%= form_for(channel, {action: channelPath({ channel_id: channel.ID }), method: "PUT"}) { %>
+  <%= partial("channels/form.html") %>
+  <a href="<%= channelPath({ channel_id: channel.ID }) %>" class="btn btn-warning" data-confirm="Вы уверены?">Отмена</a>
+<% } %>
